@@ -1,0 +1,39 @@
+baseurl = "https://opensourcecities.github.io/"
+languageCode = "en-us"
+title = "Open Source Cities"
+theme = "osc-theme"
+
+[params]
+    # To provide some metadata for search engines feel free to add a few
+    # information about you and your website.
+    name = "Open Source Cities - Montréal"
+    description = "A directory of companies, people, and projects that are Open Source and from Montréal."
+    fqdn = "https://opensourcecities.github.io"
+
+    # The path must be relative to the static folder
+    favicon = "favicon.ico"
+
+    # Navigation
+    [params.navigation]
+        brand = "/img/logo.png"
+
+        [[params.navigation.link]]
+            text = "Home"
+            link = ""
+            anchor = "page-top"
+
+        [[params.navigation.link]]
+            text = "Contact"
+            link = "#contact"
+            anchor = "contact"
+
+    # Footer
+    [params.footer]
+        # Conact
+        [[params.footer.contact]]
+            icon = "github"
+            text = "@OpenSourceCities"
+            link = "https://github.com/opensourcecities"
+
+    # Google Analytics.
+    googleAnalytics = "UA-XXXXXXXX-1"

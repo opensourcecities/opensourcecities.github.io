@@ -1,0 +1,22 @@
+notifications:
+  email: false
+
+language: ruby
+rvm:
+  - 2.2
+
+install:
+  - rm -rf public || exit 0
+
+script:
+  - binaries/hugo --theme=osc-theme
+  - echo 'Published at ' $(date) > public/README.md
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: public
+  keep-history: true
+  on:
+    branch: master

@@ -1,0 +1,28 @@
+<section class="bg-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Cities</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-justify">
+                {{ range sort .Site.Data.cities "text" }}
+                    {{ if not ( hasPrefix $.URL .link ) }}
+                        <div class="col-xs-12 col-md-6 city-wrapper">
+                            <div class="city-content">
+                                <a class="display-block" href="{{ .Site.Params.fqdn }}{{ .link }}" target="_blank">
+                                    <span>{{ .text }}</span>
+                                    <img src="/img{{ .link }}.jpg" />
+                                </a>
+                            </div>
+                        </div>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
