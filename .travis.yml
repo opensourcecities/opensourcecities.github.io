@@ -6,20 +6,18 @@ rvm:
   - 2.2
 
 install:
-  - git config --global user.email "travis@travis-ci.org"
-  - git config --global user.name "Travis CI"
   - rm -rf public || exit 0
-  - mkdir public
-  - git worktree prune
-  - rm -rf .git/worktrees/public/
-  - git worktree add -B master public master
-  - rm -rf public/*
 
 script:
   - binaries/hugo --theme=osc-theme
   - echo 'Published at ' $(date) > public/README.md
-  - cd public && git add --all && git commit -m "Deploy opensourcecities/opensourcecities.github.io"
-  - git remote add origin-master https://${GITHUB_TOKEN}@github.com/opensourcecities/opensourcecities.github.io.git > /dev/null 2>&1
-  - git push --quiet --set-upstream origin-master master
 
-
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: public
+  target-branch: master
+  keep-history: true
+  on:
+    branch: source
