@@ -18,7 +18,7 @@ This site is built with [Hugo](https://gohugo.io/) and uses an external theme fr
 ```bash
 git clone --recurse-submodules https://github.com/opensourcecities/opensourcecities.github.io.git
 cd opensourcecities.github.io
-./binaries/hugo server
+./hugow server
 ```
 
 - To generate the site:
@@ -27,7 +27,7 @@ cd opensourcecities.github.io
 git clone --recurse-submodules https://github.com/opensourcecities/opensourcecities.github.io.git
 cd opensourcecities.github.io
 rm -rf public/
-./binaries/hugo
+./hugow
 ```
 
 ## License

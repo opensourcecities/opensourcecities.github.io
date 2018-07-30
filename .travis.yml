@@ -9,7 +9,7 @@ install:
   - rm -rf public || exit 0
 
 script:
-  - binaries/hugo --theme=osc-theme
+  - ./hugow --theme=osc-theme
   - echo 'Published at ' $(date) > public/README.md
 
 deploy:
